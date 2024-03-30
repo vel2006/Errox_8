@@ -21,6 +21,7 @@ ScanPorts()
 	 				else
       						returnArray+=($(echo "$temp" | awk '{print $2}'))
 	    					returnArray+=($(echo "$temp" | awk '{print $3}' | awk -F '[()]' '{print $2}'))
+	  				fi
 				fi
 			else
 				if [[ -z "$temp" ]]; then
