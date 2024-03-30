@@ -85,6 +85,7 @@ elif [[ $1 == "-help" ]]; then
 	echo "THIS FILE IS OPTIMIZED FOR LAN NETWORKS AND HAS NOT BEEN TESTED ON ANY WLAN NETWORKS OR FORIN IPS"
 	echo "THIS FILE HAS ONLY BEEN TESTEN ON THE eth0 INTERFACE AND NONE OTHERS, BE SURE TO CHANGE IF NEEDED"
 	echo "Programed by: That1EthicalHacker"
+ 	echo "Github: github.com/vel2006"
  	echo "Read the README.md file"
 else
 	#FIRST TIME?#
