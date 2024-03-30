@@ -15,7 +15,12 @@ ScanPorts()
 				if [[ -z "$temp" ]]; then
 					continue
 				else
-					echo "$temp" > info.txt
+					if [[ $(echo "$temp" | awk '{print $1}') == "(UNKNOWN)" ]]; then
+     						returnArray+=($(echo "$temp" | awk '{print $3}'))
+	   					returnArray+=($(echo "$temp" | awk '{print $4}' | awk -F '[()]' '{print $2}'))
+	 				else
+      						returnArray+=($(echo "$temp" | awk '{print $2}'))
+	    					returnArray+=($(echo "$temp" | awk '{print $3}' | awk -F '[()]' '{print $2}'))
 				fi
 			else
 				if [[ -z "$temp" ]]; then
@@ -52,7 +57,7 @@ ScanPorts()
 	elif [[ "$2" =~ ^[0-9]+$ ]]; then
 		temp=$(nc -zv -w 1 $1 $2 2>&1 | grep "open")
 		if [[ $? -ne 0 ]]; then
-			echo "Not open"
+			echo "Port: $2 is not open"
 		else
 			if [[ $(echo "$temp" | awk '{print $1}') == "(UNKNOWN)" ]]; then
 				returnArray+=($(echo "$temp" | awk '{print $3}'))
