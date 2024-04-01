@@ -19,7 +19,7 @@ Report it at: github.com/vel2006/Errox_8
 
 ### Upcoming updates:
 1) Larger port range
-2) Service information gathering
+2) Service information gathering for more services
 3) Faster scan time
 4) Better front end
 5) user ip masking
